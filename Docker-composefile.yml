@@ -1,0 +1,10 @@
+# Docker-compose.yml
+
+# Docker version base
+version: "3.8"
+services:
+  image: jenkins/jenkins
+  ports:
+  -8080:8080
+  volumes:
+  Jenkins_home: /var/jenkins
