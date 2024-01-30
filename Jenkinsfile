@@ -6,26 +6,26 @@ pipeline {
  }
  agent any
  stages {
- stage(‘Cloning Git’) {
+ stage('Cloning Git') {
  steps {
  git([url: ‘https://github.com/sivakumaraddala26/Testing_job.git', branch: ‘master’])
  }
  }
- stage(‘Building image’) {
+ stage('Building image') {
  steps{
  script {
  dockerImage = docker.build imagename
  }
  }
  }
- stage(‘Running image’) {
+ stage('Running image') {
  steps{
  script {
  sh “docker run ${imagename}:latest”
  }
  }
  }
- stage(‘Deploy Image’) {
+ stage('Deploy Image') {
  steps{
  script {
  docker.withRegistry( ‘’, registryCredential ) {
