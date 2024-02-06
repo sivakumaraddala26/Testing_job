@@ -15,6 +15,7 @@ pipeline {
  steps{
  script {
  dockerImage = docker.build imagename
+ sh "docker scout quickview" 
  }
  }
  }
