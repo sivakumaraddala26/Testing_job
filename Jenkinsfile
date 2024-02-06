@@ -24,7 +24,6 @@ pipeline {
                 sh 'trivy --exit-code 1 ${dockerImage}'
             }
         }
-    }
  stage('Running image') {
  steps{
  script {
