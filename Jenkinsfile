@@ -1,6 +1,6 @@
 pipeline {
  environment {
- imagename = "Ubuntu_image"
+ imagename = "ubuntu_image"
  registryCredential = 'sivakumaraddala'
  dockerImage = ''
  }
