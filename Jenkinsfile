@@ -28,19 +28,19 @@ pipeline {
  }
  }
  }
- // stage('Running image') {
- // steps{
- // script {
- // sh "docker run ${imagename}:latest"
- // }
- // }
- // }
- stage('Deploy Image') {
+ stage('Running image') {
  steps{
  script {
- docker.withRegistry( '', registryCredential ) {
- dockerImage.push("$BUILD_NUMBER")
- dockerImage.push('latest')
+ sh "docker run ${imagename}:latest"
+ }
+ }
+ }
+ // stage('Deploy Image') {
+ // steps{
+ // script {
+ // docker.withRegistry( '', registryCredential ) {
+ // dockerImage.push("$BUILD_NUMBER")
+ // dockerImage.push('latest')
  }
  }
  }
