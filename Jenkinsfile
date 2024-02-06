@@ -2,7 +2,7 @@ pipeline {
  environment {
  imagename = "sivakumaraddala26/jenkins-docker"
  registryCredential = 'sivakumaraddala'
- dockerImage = 'myJenkins'
+ dockerImage = ''
  }
  agent any
  stages {
