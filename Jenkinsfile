@@ -18,13 +18,13 @@ pipeline {
  }
  }
  }
- stage('Running image') {
- steps{
- script {
- sh "docker run ${imagename}:latest"
- }
- }
- }
+ // stage('Running image') {
+ // steps{
+ // script {
+ // sh "docker run ${imagename}:latest"
+ // }
+ // }
+ // }
  stage('Deploy Image') {
  steps{
  script {
