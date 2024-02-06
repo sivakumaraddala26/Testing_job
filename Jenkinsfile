@@ -1,6 +1,6 @@
 pipeline {
  environment {
- imagename = "sivakumaraddala26/my-image"
+ imagename = "Ubuntu_image"
  registryCredential = 'sivakumaraddala'
  dockerImage = ''
  }
@@ -11,16 +11,6 @@ pipeline {
  git([url: 'https://github.com/sivakumaraddala26/Testing_job.git', branch: 'master'])
  }
  }
-        //  stage('Build and Push Docker Image') {
-        //     steps {
-        //         script {
-        //             docker.withRegistry('https://hub.docker.com/', registryCredential) {
-        //                 def customImage = docker.build('')
-        //                 customImage.push()
-        //             }
-        //         }
-        //     }
-        // }
  stage('Building image') {
  steps{
  script {
@@ -38,7 +28,7 @@ pipeline {
  // stage('Deploy Image') {
  // steps{
  // script {
- // docker.withRegistry( '', registryCredential ) {
+ // docker.withRegistry( 'https://index.docker.io/v1/', registryCredential ) {
  // dockerImage.push("$BUILD_NUMBER")
  // dockerImage.push('latest')
  // }
