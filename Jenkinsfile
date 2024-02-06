@@ -18,6 +18,15 @@ pipeline {
  }
  }
  }
+         stage('Scan Docker Image') {
+            steps {
+                // Run Trivy scan on the Docker image
+                trivy plugin: [
+                    imageName: "${dockerImage}",
+                    // You can specify additional Trivy options here
+                ]
+            }
+        } 
  stage('Running image') {
  steps{
  script {
